@@ -1,0 +1,20 @@
+:root {
+    --header-background-color: #f2f3f4;
+}
+
+.Wrapper {
+    padding: 32px;
+    height: calc(126px - 32px * 2);
+    display: flex;
+    background-color: var(--header-background-color);
+}
+
+.Container {
+    width: 100%;
+}
+.Container h1 {
+    font-size: 36px;
+}
+.Container h3 {
+    font-size: 18px;
+}
