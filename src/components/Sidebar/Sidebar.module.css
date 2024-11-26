@@ -1,0 +1,85 @@
+:root {
+    --menu-background-color: #eaebed;
+    --thin-line: #adadad;
+    --scroll-bar: #adadad;
+    --scroll-thumb: #fbfbfb;
+    --menu-width: 300px;
+}
+
+.Wrapper {
+    max-width: var(--menu-width);
+    height: 100%;
+    background-color: var(--menu-background-color);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.HeaderContainer {
+    width: 100%;
+    height: calc(126px - 1px);
+    border-bottom: 1px solid var(--thin-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuContainer {
+    flex: 1;
+    padding: 12px 0px 0px 24px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/*Lembrete: Esquisito, mas essa estilização que faz o ordenamento dos menus funcionar*/
+.menuContainer ul ul ul ul {
+    padding-left: 16px;
+}
+
+.menuContainer button {
+    all: unset;
+    font-size: 18px;
+    list-style-type: none;
+    width: 100%;
+    height: 48px; /* Defina a altura fixa para os itens de lista */
+    align-content: center;
+    cursor: pointer;
+}
+.menuContainer button:hover {
+    background-color: #dfdfdf;
+}
+
+.menulogo {
+}
+
+.FooterWrapper {
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 24px;
+    font-size: 12px;
+    border-top: 1px solid #adadad;
+}
+.FooterContent {
+    min-height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.FooterLanguage {
+    height: 40px;
+    width: 84px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-size: 18px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+}

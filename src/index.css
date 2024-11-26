@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+}
+
+:root {
+    display: flex;
+    color-scheme: light dark;
+    color: black;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /*Paleta padrão(Branca) e Escura*/
+    --background-color: #e6e6e6;
+    --intermediate-color: #ffffff;
+    --terciary-color: #a1c7ff;
+}
+
+body {
+    background-color: white;
+}
