@@ -23,7 +23,7 @@ function App() {
   displayData();
   */
   return (
-    <div style={{ display: "flex", height: "100vh", width: "100vw" }}>
+    <div className="appWrapper">
       <Sidebar />
       <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
         <InfoTitle />

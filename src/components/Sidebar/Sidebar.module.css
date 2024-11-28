@@ -1,13 +1,13 @@
 :root {
-    --menu-background-color: #eaebed;
-    --thin-line: #adadad;
-    --scroll-bar: #adadad;
+    --menu-background-color: var(--intermediate-color);
+    --thin-line: var(--terciary-color);
+    --scroll-bar: var(--terciary-color);
     --scroll-thumb: #fbfbfb;
-    --menu-width: 300px;
+    --menu-width: 276px;
 }
 
 .Wrapper {
-    max-width: var(--menu-width);
+    min-width: var(--menu-width);
     height: 100%;
     background-color: var(--menu-background-color);
 
@@ -17,11 +17,14 @@
 
 .HeaderContainer {
     width: 100%;
-    height: calc(126px - 1px);
+    height: calc(56px - 1px);
     border-bottom: 1px solid var(--thin-line);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.HeaderContainer h2 {
+    font-size: 21px;
 }
 
 .menuContainer {
@@ -35,39 +38,51 @@
 }
 
 /*Lembrete: Esquisito, mas essa estilização que faz o ordenamento dos menus funcionar*/
-.menuContainer ul ul ul ul {
-    padding-left: 16px;
+.menuContainer ul ul ul {
+    padding-left: 8px;
 }
 
-.menuContainer button {
+.menuItem {
     all: unset;
     font-size: 18px;
+    font-weight: 500;
     list-style-type: none;
     width: 100%;
     height: 48px; /* Defina a altura fixa para os itens de lista */
-    align-content: center;
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    gap: 9px;
 }
-.menuContainer button:hover {
-    background-color: #dfdfdf;
+.menuItem:hover {
+    background-color: var(--terciary-color);
+}
+.menuItem.active {
+    background-color: var(--terciary-color);
+    transition:
+        background-color 0.3s,
+        color 0.3s;
 }
 
-.menulogo {
+/*Corrige o problema do tamanho do container do ReactSVG*/
+.menuItem div div {
+    height: 24px;
 }
 
 .FooterWrapper {
     height: 50px;
     display: flex;
     align-items: flex-end;
-    padding-left: 24px;
+    padding: 0 16px;
     font-size: 12px;
-    border-top: 1px solid #adadad;
+    border-top: 1px solid var(--terciary-color);
 }
 .FooterContent {
     min-height: 40px;
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 9px;
 }
 

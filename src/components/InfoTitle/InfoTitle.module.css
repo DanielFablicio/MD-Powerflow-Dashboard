@@ -1,20 +1,28 @@
 :root {
-    --header-background-color: #f2f3f4;
+    --header-background-color: var(--intermediate-color);
 }
 
 .Wrapper {
-    padding: 32px;
-    height: calc(126px - 32px * 2);
+    padding: 16px;
+    height: calc(56px - 16px * 2);
     display: flex;
     background-color: var(--header-background-color);
 }
 
 .Container {
+    position: relative;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 .Container h1 {
-    font-size: 36px;
+    font-size: 24px;
 }
 .Container h3 {
     font-size: 18px;
+}
+
+.ThemeSwitchContainer {
+    position: absolute;
+    right: 0px;
 }

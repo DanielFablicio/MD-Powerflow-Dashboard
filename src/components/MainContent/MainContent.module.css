@@ -5,6 +5,4 @@
 .Container {
     margin: 0 56px;
     height: 100%;
-    display: flex;
-    gap: 24px;
 }

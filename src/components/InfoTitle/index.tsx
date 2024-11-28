@@ -1,3 +1,4 @@
+import ThemeSwitch from "../ThemeSwitch";
 import styles from "./InfoTitle.module.css";
 
 export default function InfoTitle() {
@@ -5,9 +6,9 @@ export default function InfoTitle() {
     <div className={styles.Wrapper}>
       <div className={styles.Container}>
         <h1>Solar Farm 1: Plant Overview</h1>
-        <h3>
-          Portfolio {">"} Solar farm 1 {">"} Plant Overview
-        </h3>
+        <div className={styles.ThemeSwitchContainer}>
+          <ThemeSwitch />
+        </div>
       </div>
     </div>
   );

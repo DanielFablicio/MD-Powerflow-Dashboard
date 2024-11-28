@@ -1,3 +1,33 @@
+:root {
+    /*Paleta padrão(Branca)*/
+    --text-color: black;
+    --background-color: #eeeeee;
+    --intermediate-color: #ffffff;
+    --terciary-color: #a1c7ff;
+    --quaternary-color: #f4f3f3;
+    --green: #4cc165;
+    --orange: #ff8c09;
+    --yellow: #ffda09;
+    --red: #ff0000;
+    --blue: #5e91ee;
+}
+
+[data-theme="dark"] {
+    /*Paleta Escura*/
+    --text-color: white;
+    --background-color: #0c0a0a;
+    --intermediate-color: #1c1918;
+    --terciary-color: #453d3b;
+    --quaternary-color: #292523;
+    --green: #25502e;
+    --orange: #ff8c09;
+    --yellow: #ffda09;
+    --red: #ff0000;
+    --blue: #2f3d6c;
+}
+
 .appWrapper {
-    height: 100vw;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
 }

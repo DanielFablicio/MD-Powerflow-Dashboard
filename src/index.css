@@ -7,19 +7,17 @@
 :root {
     display: flex;
     color-scheme: light dark;
-    color: black;
+    color: var(--text-color);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    /*Paleta padrão(Branca) e Escura*/
-    --background-color: #e6e6e6;
-    --intermediate-color: #ffffff;
-    --terciary-color: #a1c7ff;
 }
 
 body {
-    background-color: white;
+    background-color: var(--background-color);
+    transition:
+        background-color 0.5s ease-in-out,
+        color 0.5s ease-in-out;
 }
