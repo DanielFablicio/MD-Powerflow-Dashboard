@@ -7,7 +7,8 @@
 }
 
 .Wrapper {
-    min-width: var(--menu-width);
+    width: var(--menu-width);
+    flex-shrink: 0;
     height: 100%;
     background-color: var(--menu-background-color);
 
@@ -29,17 +30,26 @@
 
 .menuContainer {
     flex: 1;
-    padding: 12px 0px 0px 24px;
+    padding: 12px 0px 0px 0px;
     display: flex;
     flex-direction: column;
     align-content: center;
     overflow-y: auto;
     overflow-x: hidden;
+    --initial-padding-left-button: 16px;
 }
 
-/*Lembrete: Esquisito, mas essa estilização que faz o ordenamento dos menus funcionar*/
-.menuContainer ul ul ul {
-    padding-left: 8px;
+.menuContainer ul button {
+    padding-left: var(--initial-padding-left-button);
+}
+.menuContainer ul ul button {
+    padding-left: calc(var(--initial-padding-left-button) * 2);
+}
+.menuContainer ul ul ul button {
+    padding-left: calc(var(--initial-padding-left-button) * 3);
+}
+.menuContainer ul ul ul ul button {
+    padding-left: calc(var(--initial-padding-left-button) * 4);
 }
 
 .menuItem {

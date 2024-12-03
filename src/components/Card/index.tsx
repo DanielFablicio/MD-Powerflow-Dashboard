@@ -2,8 +2,8 @@ import styles from "./Card.module.css";
 import { CardProps } from "./types";
 
 export default function Card({
-  height,
-  width,
+  maxHeight,
+  maxWidth,
   title,
   color,
   variant,
@@ -14,8 +14,8 @@ export default function Card({
     pra deixar com o tamanho correto
   */
   const style: React.CSSProperties = {
-    height: `calc(${height}px - var(--card-border-width)*2 - var(--card-padding)*2)`,
-    width: `calc(${width}px - var(--card-border-width)*2 - var(--card-padding)*2)`,
+    ...(maxWidth !== undefined && { width: `${maxWidth}px` }),
+    ...(maxHeight !== undefined && { height: `${maxHeight}px` }),
   };
 
   const hexColorRegex = /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$/;

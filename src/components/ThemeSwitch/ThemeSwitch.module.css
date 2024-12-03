@@ -100,7 +100,7 @@
 }
 
 .Input:focus + .Slider {
-    box-shadow: 0 0 1px #183153;
+    box-shadow: none;
 }
 
 .Input:checked + .Slider:before {

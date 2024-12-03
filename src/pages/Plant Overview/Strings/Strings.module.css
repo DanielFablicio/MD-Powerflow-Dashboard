@@ -1,0 +1,28 @@
+.StringItem p {
+    font-size: 18px;
+}
+
+.StatusDefect,
+.StatusIrregular,
+.StatusNormal {
+    display: flex;
+    border-radius: 9px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--text-color);
+
+    font-size: 18px;
+    height: 48px;
+    width: 85%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--intermediate-color);
+}
+
+.StatusDefect {
+    border-color: #f00;
+}
+
+.StatusIrregular {
+    border-color: #ffa500;
+}

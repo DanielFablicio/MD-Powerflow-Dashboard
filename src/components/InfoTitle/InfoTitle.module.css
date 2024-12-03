@@ -3,10 +3,13 @@
 }
 
 .Wrapper {
+    box-sizing: border-box;
     padding: 16px;
-    height: calc(56px - 16px * 2);
+    padding-left: 56px;
+    height: 56px;
     display: flex;
     background-color: var(--header-background-color);
+    border-bottom: 1px solid var(--terciary-color);
 }
 
 .Container {

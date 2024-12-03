@@ -1,7 +1,7 @@
 .Wrapper {
-    height: 104px;
-    padding-left: 32px;
+    height: 72px;
     display: flex;
+    margin-left: -24px;
     align-items: center;
 }
 

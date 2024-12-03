@@ -1,4 +1,5 @@
 export interface SectionsMenuProps {
+  noContent?: boolean;
   baseURL: string;
   titles: Array<string>;
 }

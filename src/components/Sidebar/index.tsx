@@ -1,14 +1,14 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./Sidebar.module.css";
 import { BaseComponentsProps, MenuItemProps } from "./types";
 import { useNavigate } from "react-router-dom";
 import { formatTitleToURL } from "../../utils/utils";
 import { ReactSVG } from "react-svg";
+import { useMenuContext } from "../../contexts/MenuContext";
+
+const basePathForIcons = "/images/menuIcons";
 
 export default function Sidebar() {
-  const toggleMenu = (menu: string) => {
-    setOpenMenu((prev) => (prev === menu ? null : menu));
-  };
   return (
     <Wrapper>
       <SidebarHeaderContainer>
@@ -34,10 +34,22 @@ export default function Sidebar() {
                 hasSubItems={true}
                 iconSrc="/solar-panels.svg"
               >
-                <MenuItem title="Plant Overview" />
-                <MenuItem title="Plant Insights" />
-                <MenuItem title="Device Drilldown" />
-                <MenuItem title="Plant Heat Map" />
+                <MenuItem
+                  title="Plant Overview"
+                  iconSrc="/plant-overview.svg"
+                />
+                <MenuItem
+                  title="Plant Insights"
+                  iconSrc="/plant-insights.svg"
+                />
+                <MenuItem
+                  title="Device Drilldown"
+                  iconSrc="/device-drilldown.svg"
+                />
+                <MenuItem
+                  title="Plant Heat Map"
+                  iconSrc="/plant-heat-map.svg"
+                />
               </MenuItem>
             </MenuItem>
           </MenuItem>
@@ -69,20 +81,28 @@ function MenuItem({
   title,
   hasSubItems = false,
   iconSrc,
+  parentPath = "",
 }: MenuItemProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const { activeMenu, setActiveMenu, openSubMenus, toggleSubMenu } =
+    useMenuContext();
+
+  const isActive = activeMenu === title;
+  const isOpen = openSubMenus.includes(title);
 
   const navigate = useNavigate();
-  const handleNavigate = () => {
-    navigate(`/${formatTitleToURL(title)}`);
-    setIsOpen((prev) => !prev);
-  };
+  const currentPath = `${parentPath}/${formatTitleToURL(title)}`;
 
-  const basePathForIcons = "src/assets/images/menuIcons/";
+  const handleNavigate = () => {
+    if (hasSubItems) {
+      toggleSubMenu(title);
+    }
+    setActiveMenu(title);
+    navigate(currentPath);
+  };
 
   const MenuButton = (
     <button
-      className={`${styles.menuItem} ${isOpen ? styles.active : ""}`}
+      className={`${styles.menuItem} ${isActive ? styles.active : ""}`}
       onClick={handleNavigate}
     >
       <ReactSVG
@@ -100,10 +120,19 @@ function MenuItem({
   return (
     <>
       {hasSubItems ? (
-        <ul>
+        <div>
           {MenuButton}
-          {isOpen && <ul>{children}</ul>}
-        </ul>
+          {isOpen && (
+            <ul>
+              {/* Passa o caminho atual como parentPath para os filhos */}
+              {React.Children.map(children, (child) =>
+                React.cloneElement(child as React.ReactElement, {
+                  parentPath: currentPath,
+                }),
+              )}
+            </ul>
+          )}
+        </div>
       ) : (
         MenuButton
       )}

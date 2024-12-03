@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
 export interface CardProps {
-  height: number;
-  width: number;
+  maxHeight?: number;
+  maxWidth?: number;
   title: string;
   color?: string;
   variant?: string;
